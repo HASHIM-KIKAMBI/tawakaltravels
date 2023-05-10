@@ -1,0 +1,1154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="website icon" type="png" href="images/logo.png">
+    <title>tawakaltravels.com</title>
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <style>
+         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+         *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            text-decoration: none;
+            border: none;
+            outline: none;
+            scroll-behavior: smooth;
+            font-family: 'Poppins', sans-serif;
+        }
+        :root{
+            --bg-color:#ffffff88;
+            --second-bg-color:#d3d3d3;
+            --text-color:rgb(0, 0, 0);
+            --main-color:rgb(11, 216, 90);
+        }
+        html{
+            font-size: 62.5%;
+            overflow-x: hidden;
+        }
+        body{
+            background: var(--bg-color);
+            color: var(--text-color);
+            overflow: hidden;
+        }
+        section{
+            min-height: 50vh;
+            padding: 9% 2% 0rem;
+        }
+        .home{
+            padding: 11rem 5rem 5rem 5rem;
+        }
+        .slider-wrapper{
+            position: relative;
+            min-width: 48rem;
+            margin: 0 auto;
+        }
+        .slider img, .slider video{
+            /* width: 1900px; */
+            flex: 1 0 100%;
+            scroll-snap-align: start;
+            object-fit: cover;
+        }
+        .slider::-webkit-scrollbar{
+            display: none;
+        }
+        .slider{
+            
+            display: flex;
+            aspect-ratio: 16 / 9;
+            overflow-x: auto;
+            border-radius: 2rem;
+            scroll-snap-type: x mandatory;
+            scroll-behavior: smooth;
+            box-shadow: 0 1.5rem 3rem -0.75rem hsla(0, 0%, 0%, 0.25);
+        }
+        .slider-nav{
+            display: flex;
+            column-gap: 1rem;
+            position: absolute;
+            bottom: 1.25rem;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 1;
+        }
+        .slider-nav a{
+            width: 1rem;
+            height: 1rem;
+            border-radius: 50%;
+            background-color: #fff;
+            opacity: 0.75;
+            transition: opacity ease 250ms;
+        }
+        .slider-nav a:hover{
+            opacity: 1;
+        }
+        .header{
+            position: fixed;
+            left: 0;
+            width: 100%;
+            height: 10rem;
+            padding: 0rem 5%;
+            background:var(--bg-color);
+            display: flex;
+            backdrop-filter: blur(5px);
+            justify-content: space-between;
+            align-items: center;
+            z-index: 100;
+        }
+        span{
+            text-shadow: 0 0 0.3rem var(--main-color);
+            color: var(--main-color);
+            font-size: 3.2rem;
+            font-weight: 750;
+        }
+        .heading{
+            text-align: center;
+            font-size: 4rem;
+        }
+        .btn{
+            display: inline-block;
+            padding: 1rem 2.8rem;
+            background: var(--main-color);
+            border-radius: 4rem;
+            box-shadow: 0 0 1rem var(--main-color);
+            font-size: 1.6rem;
+            color: var(--text-color);
+            letter-spacing: .1rem;
+            transition:  .5s ease;
+        }
+        .btn:hover{
+            box-shadow: none;
+        }
+        .header.sticky{
+            border-bottom:  .1rem solid rgba(0, 0, 0, .2);
+        }
+        .logo{
+            font-size: 2.5rem;
+            color: var(--text-color);
+            font-weight: 600;
+            cursor: default;
+        }
+        .navbar a{
+            font-size: 1.7rem;
+            text-decoration: none;
+            color: var(--text-color);
+            margin-left: 3rem;
+            transition:  .3s;
+        }
+        .navbar a:hover,
+        .navbar a.active{
+            color: var(--main-color);
+        }
+        .col1{    position: absolute;
+            top: 25%;
+            padding-left: 40px;
+            flex-direction: column;
+            width: 70%;
+        }
+        .menu-icon{
+            display: none;
+        }
+        .col1 h1{
+            font-size: 11rem;
+            font-weight: 600;
+            line-height: 1.3;
+            color: white;
+            transition: 0.5s;
+        }
+        .col1 p{
+            font-size: 2.6rem;
+            color: white;
+        }
+        .col1 a{
+            color: var(--text-color);
+        }
+        .col1 h1:hover{
+            -webkit-text-stroke: 2px white;
+            color: transparent;
+        }
+        .col1 .btn{
+            margin-top: 3%;
+        }
+        .col2{
+            display: flex;
+            flex-direction: column;
+            position: absolute;
+            bottom: 25rem;
+            left: 95%;
+        }
+        .col2 .png{
+            width: auto;
+            height: 35px;
+            cursor: pointer;
+            
+            transition:  .5s ease;
+        }
+        .col2 .png:hover{
+            opacity: 0.7;
+            transform: scale(1.5);
+        }
+        .them{
+            margin-top: 3rem;
+            margin-bottom: -5rem;
+        }
+        .patners{
+            justify-content: center;
+            align-items: center;
+            margin-top: 5rem;
+            display: flex;
+            flex-direction: row;
+            gap: 10rem;
+        }
+        /* section services */
+        .services h2{
+            margin-top: 2rem;
+            margin-bottom: 4rem;
+        }
+        .services-container{
+            width: 100%;
+            height: 500px;
+            display: flex;
+            padding-left: 5px;
+            padding-top: 15px;
+            gap: 2rem;
+            overflow-x: auto;   
+        }
+        .services-box{
+            width: 400px;
+            height: 400px;
+            min-width: 350px;
+        }
+        .services-container .services-box{
+            background: var(--second-bg-color);
+            padding: 3rem 2rem 4rem;
+            border-radius: 2rem;
+            text-align: center;
+            border: .2rem solid var(--bg-color);
+            transition:  .5s ease;
+        }
+        .services-container .services-box:hover{
+            border-color: var(--main-color);
+            transform: scale(1.02);
+        }
+        .services-box span{
+            font-size: 5rem;
+            color: var(--main-color);
+        }
+        .services-box h3{
+            font-size: 2.6rem;
+        }
+        .services-box p{
+            font-size: 1.6rem;
+            margin: 1rem 0 1rem;
+        }
+        .services-box a{
+            color: var(--text-color);
+        }
+        /* about us */
+        #about{
+            min-height: 100vh;
+        }
+        .opp{
+  margin-left: 4%;
+  margin-right: 4%;
+}
+.odd{
+  display: flex;
+  flex-direction: row;
+}
+.odd1 p{
+font-size: 1.5rem;
+}
+.odd2 p{
+    font-size: 1.5rem;
+    flex-direction: column;
+}
+.odd2 .p{
+    flex-direction: row;
+}
+.odd1{
+    gap: 2rem;
+}
+.odd2 img{
+  border-radius: 30px;
+margin-right: 3%;
+height: auto;
+width: 400px;
+}
+        .thecard{
+margin-top: 2%;
+margin-left: 2%;
+  position: relative;
+  display: inline-block;
+  width: 200px;
+  height: 220px;
+  transform-style: preserve-3d;
+  transition: all 0.5s ease;
+}
+.thecard:hover{
+  transform: rotateY(180deg) rotatez(180deg);
+}
+.card1{
+background-image: url(twaf6ull.jpg);
+}
+.card2{
+background-image: url(twaf6ull.jpg);
+}
+.card3{
+background-image: url(twaf6ull.jpg);
+}
+.card4{
+background-image: url(twaf6ull.jpg);
+}
+.thefront{
+position: absolute;
+width: 100%;
+height: 100%;
+backface-visibility: hidden;
+border-radius: 20px;
+background-color: rgb(223, 223, 223);
+background-position: center;
+background-size:cover;
+}
+.theback{
+  position: absolute;
+  width: 100%;
+height: 100%;
+border-radius: 20px;
+backface-visibility: hidden;
+background-color: rgb(223, 223, 223);
+background-position: center;
+background-size: cover;
+transform: rotateY(180deg) rotatez(180deg);
+}
+.theback .imgs{
+width: 80px;
+height: 80px;
+margin-top: 10px;
+}
+.theback button{
+    padding: 9px 25px;
+    background-color: rgba(0, 136, 169,1);
+  color: white;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease 0s;
+}
+.theback button a{
+  text-decoration: none;
+  color: white;
+}
+.theback button:hover{
+    background-color: rgba(0, 136, 169,0.5);
+  font-size: 17px;
+}
+.png{
+  width: auto;
+  height: 30px;
+  cursor: pointer;
+  margin: 5px;
+}
+/* package section design */
+.package{
+padding-top: 13rem;
+}
+.package-container{
+    width: 100%;
+            display: flex;
+            flex-direction: row;
+            gap: 2rem;
+            overflow-x: auto;  
+            padding-top: 2rem;
+}
+        .package-container .package-box{
+            background: var(--second-bg-color);
+            border-radius: 2rem;
+            text-align: center;
+            border: .2rem solid var(--bg-color);
+            transition:  .5s ease;
+        }
+        .package-container .package-box:hover{
+            border-color: var(--main-color);
+            transform: scale(1.02);
+        }
+.package-box{
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    
+    background-color: rgb(223, 223, 223);
+    border-radius: 20px;
+    width: 350px;
+    height: 410px;
+}
+.package-box img{
+    border-radius: 20px;
+    margin-bottom: 1rem;
+    height: auto;
+    width: 340px;
+}
+.package-box h2{
+    font-size: 1.6rem;
+    margin-bottom: 1rem;
+}
+.package-box p{
+    font-size: 1.6rem;
+    margin: 1rem 5px;
+}
+/* contacts section */
+#contact{
+    min-height: 50vh;
+}.contas{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+            align-items: center;
+}
+.conta{
+            width: 50%;
+}
+.contact h2{
+            margin-bottom: 3rem;
+        }
+        .contact form{
+            max-width: 70rem;
+            margin: 1rem auto;
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        .contact form .input-box{
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+        .contact form .input-box input,
+        .contact form textarea{
+            width: 100%;
+            padding: 1.5rem;
+            font-size: 1.6rem;
+            color: var(--text-color);
+            background: var(--second-bg-color);
+            border-radius: .8rem;
+            margin: .7rem 0;
+        }
+        .contact form .input-box input{
+            width: 49%;
+        }
+        .contact form textarea{
+            resize: none;
+        }
+        .contact form .btn{
+            margin-top: 2rem;
+            cursor: pointer;
+        }
+#submit{
+color: var(--text-color);
+}
+.sec{
+    display: flex;
+    gap: 2rem;
+    background: var(--second-bg-color);
+    border-radius: .8rem;
+    margin-top: 2rem;
+    padding: 4rem 4rem 4rem;
+    margin-left: 4rem;
+}
+.sec{
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+.sec h3{
+    margin-top: 1rem;
+}
+.sec p{
+margin-top: 0rem;
+font-size: 1.5rem;
+} 
+        .footer{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            padding: 2rem 9%;
+            background: var(--second-bg-color);
+        }
+        .footer-text p{
+            font-size: 1.6rem;
+        }
+        .footer-iconTop a{
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            padding: .8rem;
+            background: var(--main-color);
+            border-radius: .8rem;
+        }
+        .footer-iconTop a i{
+            font-size: 2.4rem;
+            color: var(--second-bg-color);
+        }
+        .footer-iconTop a i .png{
+            height: auto;
+            width: 20px;   
+        }
+        /* breaking point */
+        @media (max-width: 1432px){
+            .patners{
+            justify-content: center;
+            align-items: center;
+            margin-top: 5rem;
+            display: flex;
+            flex-direction: row;
+            gap: 5rem;
+        }
+            .col1{
+                position: absolute;
+            top: 18%;
+            padding-left: 40px;
+            flex-direction: column;
+            width: 70%;
+        }
+        .col1 h1{
+            font-size: 8rem;
+            font-weight: 600;
+            line-height: 1.3;
+            color: white;
+            transition: 0.5s;
+        }
+        .col1 p{
+            font-size: 2.3rem;
+            color: white;
+        }
+        .col2{
+            display: flex;
+            flex-direction: column;
+            position: absolute;
+            bottom: 20rem;
+            left: 95%;
+        }
+        .col2 .png{
+            width: auto;
+            height: 32px;
+            cursor: pointer;
+            transition:  .5s ease;
+        }
+        }
+        @media (max-width: 1100px){
+            .patners{
+            justify-content: center;
+            align-items: center;
+            margin-top: 5rem;
+            display: flex;
+            flex-direction: row;
+            gap: 5rem;
+        }
+        .patners img{
+            width: 80px;
+        }
+        .col1{
+            position: absolute;
+            top: 18%;
+            padding-left: 40px;
+            flex-direction: column;
+            width: 70%;
+        }
+        .col1 h1{
+            font-size: 7rem;
+            font-weight: 550;
+            line-height: 1.3;
+            color: white;
+            transition: 0.5s;
+        }
+        .col1 p{
+            font-size: 2rem;
+            color: white;
+        }
+        .col2{
+            display: flex;
+            flex-direction: column;
+            position: absolute;
+            bottom: 20rem;
+            left: 95%;
+        }
+        .col2 .png{
+            width: auto;
+            height: 30px;
+            cursor: pointer;
+            transition:  .5s ease;
+        }
+        #contact{
+        min-height: auto;
+    }
+    .contact form .input-box input{
+    width: 100%;
+}
+            .contas{
+    flex-direction: column;
+    justify-content: center;
+            align-items: center;
+}
+.sec{
+    margin-bottom: 3rem;
+}
+        }
+        @media (max-width: 934px){
+            .col1{
+            position: absolute;
+            top: 18%;
+            padding-left: 40px;
+            flex-direction: column;
+            width: 70%;
+        }
+            .col1 h1{
+            font-size: 5rem;
+            font-weight: 500;
+            line-height: 1.3;
+            color: white;
+            transition: 0.5s;
+        }
+        .col1 p{
+            font-size: 1rem;
+            color: white;
+        }
+        .col2{
+            display: flex;
+            flex-direction: column;
+            position: absolute;
+            bottom: 10rem;
+            left: 93%;
+        }
+        .col2 .png{
+            width: auto;
+            height: 30px;
+            cursor: pointer;
+            transition:  .5s ease;
+        }
+        .odd{
+  display: flex;
+  flex-direction: column;
+}
+
+.odd2 img{
+  border-radius: 30px;
+margin-right: 0%;
+height: auto;
+width: 200;
+background-size: cover;
+}
+        }
+        @media (max-width: 815px){
+            .col1{
+            position: absolute;
+            top: 15%;
+            padding-left: 40px;
+            flex-direction: column;
+            width: 70%;
+        }
+            .col1 h1{
+            font-size: 4.5rem;
+            font-weight: 700;
+            line-height: 1.3;
+            color: white;
+            transition: 0.5s;
+        }
+        .col2{
+            display: flex;
+            flex-direction: column;
+            position: absolute;
+            bottom: 8rem;
+            left: 93%;
+        }
+        .col2 .png{
+            width: auto;
+            height: 25px;
+            cursor: pointer;
+            transition:  .5s ease;
+        }
+        }
+        @media (max-width: 700px){
+            .col1 h1{
+            font-size: 3.5rem;
+            font-weight: 700;
+            line-height: 1.3;
+            color: white;
+            transition: 0.5s;
+        }
+        .col1 p{
+            font-size: 1rem;
+            color: white;
+        }
+        .col2{
+            display: flex;
+            flex-direction: column;
+            position: absolute;
+            bottom: 8rem;
+            left: 93%;
+        }
+        .col2 .png{
+            width: auto;
+            height: 25px;
+            cursor: pointer;
+            transition:  .5s ease;
+        }
+        }
+        @media (max-width: 620px){
+            .col1{
+            position: absolute;
+            top: 12%;
+            padding-left: 40px;
+            flex-direction: column;
+            width: 70%;
+        }
+            .menu-icon{
+            display: block;
+            height: 25px;
+        }
+        .navbar{
+            position: absolute;
+            display: flex;
+            flex-direction: column;
+            height: 30vh;
+left: 0%;
+top: 6.4rem;
+bottom: 0%;
+        width: 25%;
+background-color: #d3d3d3b2;
+border-radius: 0 50px 50px 0;
+backdrop-filter: blur(5px);
+border-top:  .1rem solid rgba(0, 0, 0, .2);
+        box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .2);
+        display: none;
+        }
+        .navbar.active{
+            display: block;
+        }
+        .navbar a{
+            font-size: 2rem;
+            text-decoration: none;
+            color: var(--text-color);
+            transition:  .3s;
+        display: block;
+        margin: 2rem 20%;
+        }
+        .navbar a:hover,
+        .navbar a.active{
+            color: var(--main-color);
+        }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <img src="images/menu.png" class="menu-icon" id="menu-icon">
+        
+        <a href="#" class="logo"><img src="images/logo.png" style="width:auto; height:100px; "></a>
+
+
+        <nav class="navbar">
+            <a href="#home" class="active">Home</a>
+            <a href="#services">Services</a>
+            <a href="#about">About</a>
+            <a href="#package">Package</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+<section class="home" id="home">
+    <div class="slider-wrapper">
+        <div class="slider">
+        <!-- <img id="slide-1" src="images/Saudi.jpg"/> -->
+        <video id="slide-1" class="vid" autoplay loop muted plays-inline>
+            <source src="images/fat.mp4" type="video/mp4">
+        </video>
+        <img id="slide-2" src="images/united.jpg"/>
+        <img id="slide-3" src="images/Saudi.jpg"/>
+        <img id="slide-4" src="images/men.jpg"/>
+        </div>
+        <div class="slider-nav">
+            <a href="#slide-1"></a>
+            <a href="#slide-2"></a>
+            <a href="#slide-3"></a>
+            <a href="#slide-4"></a>
+        </div>
+        <div class="col2">
+            <a href="https://www.facebook.com/kiks.bats/about_overview"><img class="png" src="white/facebook.png" ></a>
+            <img src="white/instagram.png" class="png">
+            <img src="white/linkedin.png" class="png">
+            <img src="white/twitter.png" class="png">
+                </div>
+    </div>
+    <div class="home-container">
+        <div class="col1">
+    <h1>TAWAKAL TRAVEL <br>AGENCY</h1>
+    <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit.<br>
+        Repellat optio vitae molestias deleniti,soluta <br>
+        quo temporibus odit quae ipsum tempore?
+    </p>
+    <a href="#package" class="btn">Explore</a>
+        </div>
+    </div>
+    <center><h2 class="them">partners</h2></center>
+    <div class="patners">
+        <div class="patner">
+            <img src="images/highly.jpg">
+            <p>Lorem ipsum dolor sit amet 
+            <br>consectetur adipisicing elit.</p>
+        </div>
+        <div class="patner">
+            <img src="images/iata.png">
+            <p>Lorem ipsum dolor sit amet 
+                <br>consectetur adipisicing elit.</p>
+        </div>
+        <div class="patner">
+            <img src="images/Official.png">
+            <p>Lorem ipsum dolor sit amet 
+                <br>consectetur adipisicing elit.</p>
+        </div>
+    </div> 
+</section>
+<section class="services" id="services">
+    <h2 class="heading">Our <span>Services</span></h2>
+
+    <div class="services-container">
+        <div class="services-box">
+            <span class="material-symbols-outlined">
+                stars
+                </span>
+            <h3>5 star Accommodation</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                 Temporibus provident velit tenetur! Iusto, maxime? Modi 
+                 vitae officia neque fugit maiores.</p>
+                 <a href="#" class="btn">Explore</a>
+        </div>
+
+        <div class="services-box">
+            <span class="material-symbols-outlined">
+                history_toggle_off
+                </span>
+            <h3>Historical site tour</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                 Temporibus provident velit tenetur! Iusto, maxime? Modi 
+                 vitae officia neque fugit maiores.</p>
+                 <a href="#" class="btn">Explore</a>
+        </div>
+
+        <div class="services-box">
+            <span class="material-symbols-outlined">
+                airplane_ticket
+                </span>
+            <h3>Air tickects</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                 Temporibus provident velit tenetur! Iusto, maxime? Modi 
+                 vitae officia neque fugit maiores.</p>
+                 <a href="#" class="btn">Explore</a>
+        </div>
+
+        <div class="services-box">
+            <span class="material-symbols-outlined">
+                credit_card
+                </span>
+            <h3>Visa processing</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                 Temporibus provident velit tenetur! Iusto, maxime? Modi 
+                 vitae officia neque fugit maiores.</p>
+                 <a href="#" class="btn">Explore</a>
+        </div>
+
+        <div class="services-box">
+            <span class="material-symbols-outlined">
+                directions_bus
+                </span>
+            <h3>Ground transportation</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                 Temporibus provident velit tenetur! Iusto, maxime? Modi 
+                 vitae officia neque fugit maiores.</p>
+                 <a href="#" class="btn">Explore</a>
+        </div>
+
+    </div>
+</section>
+    <!--about section design-->
+    <section class="about" id="about">
+        <center>
+            <h2 class="heading">About <span>us</span></h2>
+            <br>
+            <br>
+            <h3><font size='+2' color='darkblue'>Tawakal travels</font></h3>
+        </center>
+        <br>
+        <br>
+        <div class="opp">
+          <div class="odd odd1">
+            <p><b>Tawakal Travels Ltd</b> is a trusted and reliable company that has been providing top-notch Umrah services for over 8 years.
+                 Our experienced and knowledgeable team has a deep understanding of the spiritual significance of the pilgrimage and is
+                  dedicated to providing our clients with the best possible experience. We offer a wide range of customizable Umrah and 
+                  Hajj packages that cater to the diverse needs and budgets of our clients. Our packages include everything from airfare,
+                   accommodation, visa processing, and transportation. We also provide personalized assistance and support throughout the
+                    pilgrimage, including visa processing and pre-departure briefings.</p>
+                    <p>In addition to our comprehensive Umrah packages and Hajj services, we also offer a range of additional services such 
+                        as Ziyarat tours, Hajj packages, and domestic and international travel services. Our team is always available to answer 
+                        any questions and provide expert advice to ensure that our clients have a smooth and fulfilling pilgrimage. At Tawakal 
+                        Travels Ltd, we are committed to providing the highest level of service and ensuring that our clients have a truly 
+                        memorable and spiritual experience. We are dedicated to making the pilgrimage a comfortable and stress-free journey 
+                        for all of our clients.</p>
+                        <p>We also offer educational trips to different countries like Egypt as well as holidays to dozens of destinations.
+                             In the near future, we are planning and organizing trips to other Historic sites of Islamic significance. 
+                             i.e: Masjid Al-Aqsa, Islamic Spain (Andalusia), the former Ottoman empire, The great Aksum Kingdom (Habasha)</p>
+          </div>
+          <br>
+          <h1><b>Our Mission</b></h1>
+          <br>
+          <div class="odd odd2">
+            <img src="images/company.jpg" style="width: auto; height: 200px;">
+            <div class="p">
+                <p>We strive to be the leading provider of comprehensive and high-quality umrah & Hajj services,
+                    offering personalized support and guidance to ensure that every pilgrim has a journey that adds quality to life.</p>
+                   <br> <p><b>Our aim is to exceed the expectations of our clients…</b></p>
+                   <br> <p><b>VISION:TO: </b>provide every Muslim with a fulfilling and spiritually enriching umrah & Hajj experience that exceeds their expectations.</p>
+                   <br> <p><b>MOTTO :</b> A journey that adds quality to life.</p>
+            </div>
+          </div>
+        </div>
+        <center>
+          <br>
+          <br>
+          <p><font size='+2' color='darkblue'>Meet our team</font></p>
+            <div class="thecard">
+                <div class="thefront card1"></div>
+                <div class="theback">
+                  <img src="twa.png" class="imgs"><br>
+                  <h3>SHK Muhammad kikambi</h3>
+                  <p>CEO</p>
+                  <div class="pngs">
+                  <a href="https://twitter.com/Hashim_kikambi"><img class="png" src="white/twitter.png" ></a>
+                  <a href="https://www.facebook.com/kiks.bats/about_overview"><img class="png" src="white/facebook.png" ></a>
+                  <a href="https://www.instagram.com/hashim_kikambi/"><img class="png" src="white/instagram.png" ></a>
+                  <a href="0741273938"><img class="png" src="white/whatsapp.png" ></a>
+                </div>
+                  <button><a href="tawakal/index.html">Read more</a></button>
+                </div>
+                </div>
+                <div class="thecard">
+                    <div class="thefront card2"></div>
+                    <div class="theback">
+                      <img src="twa.png"width="auto" height="100"class="imgs"><br>
+                      <h3>Hajjat Nassuna sumaya</h3>
+                      <p>DIRECTING MANAGER</p>
+                      <div class="pngs">
+                        <a href="https://twitter.com/Hashim_kikambi"><img class="png" src="white/twitter.png" ></a>
+                        <a href="https://www.facebook.com/kiks.bats/about_overview"><img class="png" src="white/facebook.png" ></a>
+                        <a href="https://www.instagram.com/hashim_kikambi/"><img class="png" src="white/instagram.png" ></a>
+                        <a href="0741273938"><img class="png" src="white/whatsapp.png" ></a>
+                      </div>
+                      <button><a href="tawakal/index.html">Read more</a></button>
+                    </div>
+                    </div>
+                    <div class="thecard">
+                        <div class="thefront card3"></div>
+                        <div class="theback">
+                          <img src="twa.png"width="auto" height="100px"class="imgs"><br>
+                          <h3>SHK Abdulaziz kikambi</h3>
+                          <p>SUPERVISOR</p>
+                          <div class="pngs">
+                            <a href="https://twitter.com/Hashim_kikambi"><img class="png" src="white/twitter.png" ></a>
+                            <a href="https://www.facebook.com/kiks.bats/about_overview"><img class="png" src="white/facebook.png" ></a>
+                            <a href="https://www.instagram.com/hashim_kikambi/"><img class="png" src="white/instagram.png" ></a>
+                            <a href="0741273938"><img class="png" src="white/whatsapp.png" ></a>
+                          </div>
+                          <button><a href="tawakal/index.html">Read more</a></button>
+                        </div>
+                        </div>
+                        <div class="thecard">
+                            <div class="thefront card4"></div>
+                            <div class="theback">
+                              <img src="twa.png"class="imgs"><br>
+                              <h3>Hashim kikambi</h3>
+                              <p>SALES</p>
+                              <div class="pngs">
+                                <a href="https://twitter.com/Hashim_kikambi"><img class="png" src="white/twitter.png" ></a>
+                                <a href="https://www.facebook.com/kiks.bats/about_overview"><img class="png" src="white/facebook.png" ></a>
+                                <a href="https://www.instagram.com/hashim_kikambi/"><img class="png" src="white/instagram.png" ></a>
+                                <a href="0741273938"><img class="png" src="white/whatsapp.png" ></a>
+                              </div>
+                              <button><a href="tawakal/index.html">Read more</a></button>
+                            </div>
+                            </div>
+        </center>
+    </section>
+<!--package section design-->
+<section class="package" id="package">
+    <h2 class="heading">Featured <span>packages</span></h2>
+    <center>
+        <h2>Our Featured Packages allow you to get away from routine, spend time with family and friends.</h2>
+        
+        <div class="package-container">
+            <div class="package-box">
+                <img src="images/men.jpg">
+                <h2><b>RAMADHAN UMRAH</b></h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Temporibus provident velit tenetur!</p>
+                    <a href="#" class="btn">Explore</a>
+            </div>
+        
+            <div class="package-box">
+                <img src="images/npm.jpg">
+                <h2><b>HIJJA GOLDEN PACKAGE</b></h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Temporibus provident velit tenetur!</p>
+                    <a href="#" class="btn">Explore</a>
+            </div>
+        
+            <div class="package-box">
+                <img src="images/door.jpg">
+                <h2><b>HIJJA PLATINUM PACKAGE</b></h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Temporibus provident velit tenetur!</p>
+                    <a href="#" class="btn">Explore</a>
+            </div>
+        
+            <div class="package-box">
+                <img src="images/united.jpg">
+                <h2><b>UNITED ARAB EMIRATES</b></h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Temporibus provident velit tenetur!</p>
+                    <a href="#" class="btn">Explore</a>
+            </div>
+        
+            <div class="package-box">
+                <img src="images/saudi.jpg">
+                <h2><b>SAUDI ARABIA</b></h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Temporibus provident velit tenetur!</p>
+                    <a href="#" class="btn">Explore</a>
+            </div>
+        </div>
+        
+    </center>
+</section>
+<!--contact section design-->
+
+</section>
+<!--contact section design-->
+
+<section class="contact" id="contact">
+    <div class="contas">
+<div class="conta">
+    <h2 class="heading">Contact <span>Us!</span></h2>
+    <form action="https://formsubmit.co/el/yalito" method="POST">
+        <div class="input-box">
+            <input type="text" placeholder="Full Name" id="name">
+            <input type="email" name="email" placeholder="Email Address" id="email">
+        </div>
+        <div class="input-box">
+            <input type="number" placeholder="Mobile Number" id="phone">
+            <input type="text" placeholder="Email Subject" id="subject">
+        </div>
+        <textarea name="" id="" cols="30" rows="10" placeholder="Your Message" id="message"></textarea>
+        <!-- <button type="submit"  class="btn" id="submit">Send</button> -->
+        <button type="submit"class="btn" >Send</button>
+    </form>
+</div>
+<div class="sec">
+<div class="me">
+    <h1>Head Office</h1>
+    <h3>Kampala</h3>
+<p>Magoba Arcade Ben Kiwanuka Street <br>opp Old Taxi park near Magoba Mosque</p>
+<br>
+<p>+256 702642093</p>
+<p> info@tawakaltravels.com</p>
+</div>
+<div class="you">
+    <h3>Opening Times:</h3>
+<p>Monday to Friday
+    <br>
+    8.00 am to 8.00 pm</p>
+<br>
+<br>
+<p>Sunday
+    <br>
+Closed</p>
+</div>
+    </div>
+    </section>
+    
+    <!--footer design-->
+    
+    <footer class="footer">
+        <div class="footer-text">
+            <p>Copyright &copy; 2023 by Untold | All Rights Reserved.</p>
+                <a href="https://formsubmit.co/el/hashimkikambi7@gmail.com" target="_blank">Email us</a>
+        </div>
+    
+        <div class="footer-iconTop">
+            <a href="#home"><i><img src="white/up.png" class="png"></i></a>
+        </div>
+    </footer>
+<!--scroll reveal-->
+<script src="https://unpkg.com/scrollreveal"></script>
+<!-- mail js -->
+<script src="https://smtpjs.com/v3/smtp.js"></script>
+<script>
+    function sendEmail(){
+        Email.send({
+            Host : "smtp.gmail.com",
+            Username : "hashimkikambi7@gmail.com",
+            Password : "kinghashim",
+            To : "deletingfacebook256@gmail.com",
+            from : docment.getElementById("email").value,
+            Subject : "New Contact Form Enquiry",
+            Body : "Name: " + document.getElementById("name").value
+            + "<br> Subject: " + document.getElementById("subject").value
+            + "<br> Email: " + document.getElementById("email").value
+            + "<br> Phone no: " + document.getElementById("phone").value
+            + "<br> Message: " + document.getElementById("message").value
+        }).then(
+            message => alert("Message Sent Succesfully")
+        );
+    }
+</script>
+    <!--custom js-->
+    <script>
+        /*======scroll sections active link====*/
+let sections = document.querySelectorAll('section');
+let navLinks = document.querySelectorAll('header nav a');
+
+window.onscroll = () => {
+    sections.forEach(sec =>{
+        let top = window.scrollY;
+        let offset = sec.offsetTop -150;
+        let height = sec.offsetHeight;
+        let id = sec.getAttribute('id');
+
+        if(top >= offset && top < offset + height) {
+            navLinks.forEach(links => {
+                links.classList.remove('active');
+                document.querySelector('header nav a[href*=' + id + ']').classList.add('active');
+            });
+        };
+    });
+    /*======sticky navbar====*/
+    let header = document.querySelector('header');
+
+    header.classList.toggle('sticky', window.scrollY > 100);
+
+    /*====== remove toggle icon and navbar when click nav link (scroll)====*/
+    menuIcon.classList.remove('bx-x');
+    navbar.classList.remove('active');
+};
+    </script>
+    <script>
+        /*====== toggle icon navbar====*/
+let menuIcon = document.querySelector('#menu-icon');
+let navbar = document.querySelector('.navbar');
+
+menuIcon.onclick = () => {
+    menuIcon.classList.toggle('X');
+    navbar.classList.toggle('active');
+};
+    </script>
+</body>
+</html>
