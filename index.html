@@ -44,7 +44,7 @@
         }
         .slider-wrapper{
             position: relative;
-            min-width: 48rem;
+            min-width: 100%;
             margin: 0 auto;
         }
         .slider img, .slider video{
@@ -379,7 +379,6 @@ padding-top: 13rem;
 .package-box{
     margin-top: 2rem;
     margin-bottom: 2rem;
-    
     background-color: rgb(223, 223, 223);
     border-radius: 20px;
     width: 350px;
@@ -406,7 +405,7 @@ padding-top: 13rem;
     display: flex;
     flex-direction: row;
     justify-content: center;
-            align-items: center;
+    align-items: center;
 }
 .conta{
             width: 50%;
@@ -415,10 +414,10 @@ padding-top: 13rem;
             margin-bottom: 3rem;
         }
         .contact form{
-            max-width: 70rem;
+            max-width: 100rem;
             margin: 1rem auto;
             text-align: center;
-            margin-bottom: 3rem;
+            /* margin-bottom: 3rem; */
         }
         .contact form .input-box{
             display: flex;
@@ -433,7 +432,7 @@ padding-top: 13rem;
             color: var(--text-color);
             background: var(--second-bg-color);
             border-radius: .8rem;
-            margin: .7rem 0;
+            margin: .5rem 0;
         }
         .contact form .input-box input{
             width: 49%;
@@ -696,12 +695,51 @@ background-size: cover;
         }
         }
         @media (max-width: 620px){
+            section{
+            min-height: 50vh;
+            padding: 30% 2% 0rem;
+        }
+            .home{
+            padding: 11rem 1rem 5rem 1rem;
+        }
+        .btn{
+            display: inline-block;
+            padding: .5rem 1rem;
+            background: var(--main-color);
+            border-radius: 4rem;
+            box-shadow: 0 0 1rem var(--main-color);
+            font-size: 1.1rem;
+            color: var(--text-color);
+            letter-spacing: .1rem;
+            transition:  .5s ease;
+        }
+        .col1 h1{
+            font-size: 2rem;
+            font-weight: 700;
+            line-height: 1.3;
+            color: white;
+            transition: 0.5s;
+        }
             .col1{
             position: absolute;
-            top: 12%;
-            padding-left: 40px;
+            top: 13%;
+            padding-top: 50px;
+            padding-left: 20px;
             flex-direction: column;
             width: 70%;
+        }
+        .col2{
+            display: flex;
+            flex-direction: column;
+            position: absolute;
+            bottom: 5rem;
+            left: 91%;
+        }
+        .col2 .png{
+            width: auto;
+            height: 20px;
+            cursor: pointer;
+            transition:  .5s ease;
         }
             .menu-icon{
             display: block;
@@ -711,32 +749,112 @@ background-size: cover;
             position: absolute;
             display: flex;
             flex-direction: column;
-            height: 30vh;
-left: 0%;
-top: 6.4rem;
-bottom: 0%;
-        width: 25%;
-background-color: #d3d3d3b2;
-border-radius: 0 50px 50px 0;
-backdrop-filter: blur(5px);
-border-top:  .1rem solid rgba(0, 0, 0, .2);
-        box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .2);
-        display: none;
+            height: 35vh;
+            left: 0%;
+            top: 10rem;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            background-color: #d3d3d3b2;
+            border-radius: 0 0px 0px 0;
+            backdrop-filter: blur(5px);
+            border-top:  .1rem solid rgba(0, 0, 0, .2);
+            box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .2);
+            display: none;
+            transition:  .5s;
         }
         .navbar.active{
             display: block;
         }
         .navbar a{
+            width: 100%;
+            justify-content: center;
+            align-items: center;
             font-size: 2rem;
             text-decoration: none;
             color: var(--text-color);
-            transition:  .3s;
+            transition:  .5s;
         display: block;
-        margin: 2rem 20%;
+        margin: 2rem 40%;
         }
         .navbar a:hover,
         .navbar a.active{
             color: var(--main-color);
+        }
+        .conta{
+            width: 90%;
+}
+.services-box{
+            width: 200px;
+            height: 300px;
+            min-width: 300px;
+        }
+        .thecard{
+margin-top: 2%;
+margin-left: 2%;
+  position: relative;
+  display: inline-block;
+  width: 150px;
+  height: 150px;
+  transform-style: preserve-3d;
+  transition: all 0.5s ease;
+}
+        .package-box{
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    background-color: rgb(223, 223, 223);
+    border-radius: 20px;
+    width: 300px;
+    height: 300px;
+}
+.package-box img{
+    border-radius: 20px;
+    margin-bottom: 1rem;
+    height: auto;
+    width: 200px;
+}
+.package-box h2{
+    font-size: 1.6rem;
+    margin-left: 5px;
+    margin-right: 5px;
+    margin-bottom: 0rem;
+}
+.package-box p{
+    font-size: 1.6rem;
+    margin: .5rem 5px;
+}
+.sec{
+    display: flex;
+    gap: 2rem;
+    background: var(--second-bg-color);
+    border-radius: .8rem;
+    margin-top: 2rem;
+    padding: 4rem 4rem 4rem;
+    margin-left: 0rem;
+}
+.footer{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            padding: 2rem 9%;
+            background: var(--second-bg-color);
+        }
+        .footer-iconTop a i .png{
+            height: auto;
+            width: 15px;   
+        }
+        .footer-iconTop a{
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            padding: .5rem;
+            background: var(--main-color);
+            border-radius: .8rem;
+        }
+        .footer-text p{
+            font-size: 1rem;
         }
         }
     </style>
@@ -774,7 +892,7 @@ border-top:  .1rem solid rgba(0, 0, 0, .2);
             <a href="#slide-4"></a>
         </div>
         <div class="col2">
-            <a href="https://www.facebook.com/kiks.bats/about_overview"><img class="png" src="white/facebook.png" ></a>
+            <img src="white/facebook.png" class="png">
             <img src="white/instagram.png" class="png">
             <img src="white/linkedin.png" class="png">
             <img src="white/twitter.png" class="png">
@@ -1038,18 +1156,17 @@ border-top:  .1rem solid rgba(0, 0, 0, .2);
     <div class="contas">
 <div class="conta">
     <h2 class="heading">Contact <span>Us!</span></h2>
-    <form action="https://formsubmit.co/el/yalito" method="POST">
+    <form onsubmit="sendEmail(); reset(); return false;">
         <div class="input-box">
             <input type="text" placeholder="Full Name" id="name">
-            <input type="email" name="email" placeholder="Email Address" id="email">
+            <input type="email" placeholder="Email Address" id="email">
         </div>
         <div class="input-box">
             <input type="number" placeholder="Mobile Number" id="phone">
             <input type="text" placeholder="Email Subject" id="subject">
         </div>
         <textarea name="" id="" cols="30" rows="10" placeholder="Your Message" id="message"></textarea>
-        <!-- <button type="submit"  class="btn" id="submit">Send</button> -->
-        <button type="submit"class="btn" >Send</button>
+        <button type="submit"  class="btn" id="submit">Send</button>
     </form>
 </div>
 <div class="sec">
@@ -1080,7 +1197,6 @@ Closed</p>
     <footer class="footer">
         <div class="footer-text">
             <p>Copyright &copy; 2023 by Untold | All Rights Reserved.</p>
-                <a href="https://formsubmit.co/el/hashimkikambi7@gmail.com" target="_blank">Email us</a>
         </div>
     
         <div class="footer-iconTop">
